@@ -4,6 +4,6 @@
     <title></title>
 </head>
 <body>
-   this is the home page.
+   this is the home page. ${message}
 </body>
 </html>

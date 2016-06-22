@@ -1,6 +1,7 @@
 package com.springmvcdemo.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Map;
@@ -12,7 +13,8 @@ import java.util.Map;
 public class HomeController {
 
     @RequestMapping({"/","/home"})
-    public String homePage(Map<String, Object> model) {
+    public String homePage(Model model) {
+        model.addAttribute("message","Hello!");
         return "home";
     }
 }
