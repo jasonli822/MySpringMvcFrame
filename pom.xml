@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.jasonli</groupId>
+  <artifactId>springmvcdemo</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>springmvcdemo Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <!-- base setting -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.build.locales>zh_CN</project.build.locales>
+    <project.build.jdk>1.7</project.build.jdk>
+
+    <!-- lib versions -->
+    <junit.version>4.11</junit.version>
+    <spring.version>4.2.6.RELEASE</spring.version>
+    <servletapi.version>3.0.1</servletapi.version>
+  </properties>
+
+  <dependencies>
+    <!-- junit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- spring framework -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <!-- servlet api -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>${servletapi.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>springmvcdemo</finalName>
+  </build>
+</project>
