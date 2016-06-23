@@ -18,6 +18,7 @@
     <junit.version>4.11</junit.version>
     <spring.version>4.2.6.RELEASE</spring.version>
     <servletapi.version>3.0.1</servletapi.version>
+    <freemarker.version>2.3.23</freemarker.version>
   </properties>
 
   <dependencies>
@@ -42,6 +43,21 @@
       <artifactId>javax.servlet-api</artifactId>
       <version>${servletapi.version}</version>
     </dependency>
+
+    <!-- freemarker -->
+    <dependency>
+      <groupId>org.freemarker</groupId>
+      <artifactId>freemarker</artifactId>
+      <version>${freemarker.version}</version>
+    </dependency>
+
+    <!-- spring context support -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
   </dependencies>
 
   <build>
