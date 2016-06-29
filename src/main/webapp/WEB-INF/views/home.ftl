@@ -10,5 +10,5 @@
 </head>
 
 <body>
-this is the home page(ftl). ${message}
+this is the home page(ftl). ${message} ${user.userName}
 </body>
