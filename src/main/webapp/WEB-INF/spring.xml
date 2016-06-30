@@ -6,6 +6,8 @@
               http://www.springframework.org/schema/beans/spring-beans.xsd
               http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+       <context:component-scan base-package="com.springmvcdemo.mapper, com.springmvcdemo.service" />
+
        <context:property-placeholder location="classpath:db.properties" />
 
 </beans>
