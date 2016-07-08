@@ -24,6 +24,8 @@
     <mysql_connector_java.version>5.1.38</mysql_connector_java.version>
     <druid.version>1.0.13</druid.version>
     <slf4j.version>1.7.12</slf4j.version>
+    <jackson.version>2.7.5</jackson.version>
+    <jackson_mapper.version>1.9.13</jackson_mapper.version>
   </properties>
 
   <dependencies>
@@ -112,21 +114,47 @@
       <version>${spring.version}</version>
     </dependency>
 
+    <!-- Needed for JSON View -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-mapper-asl</artifactId>
+      <version>${jackson_mapper.version}</version>
+    </dependency>
+
+    <!-- Needed for XML View (with JAXB2) -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-oxm</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
   </dependencies>
 
   <build>
     <finalName>springmvcdemo</finalName>
     <plugins>
       <plugin>
-      <groupId>org.mybatis.generator</groupId>
-      <artifactId>mybatis-generator-maven-plugin</artifactId>
-      <version>1.3.2</version>
-      <configuration>
-        <configurationFile>src/main/resources/mybatis-generator/generatorConfig.xml</configurationFile>
-        <verbose>true</verbose>
-        <overwrite>true</overwrite>
-      </configuration>
-    </plugin>
+        <groupId>org.mybatis.generator</groupId>
+        <artifactId>mybatis-generator-maven-plugin</artifactId>
+        <version>1.3.2</version>
+        <configuration>
+          <configurationFile>src/main/resources/mybatis-generator/generatorConfig.xml</configurationFile>
+          <verbose>true</verbose>
+          <overwrite>true</overwrite>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>
