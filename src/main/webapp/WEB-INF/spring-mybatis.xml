@@ -6,7 +6,7 @@
        http://www.springframework.org/schema/tx/spring-tx.xsd">
 
        <!--数据库连接池-->
-       <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+       <bean id="dataSourceSpied" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
               <property name="url" value="${jdbc.url}" />
               <property name="username" value="${jdbc.username}"/>
               <property name="password" value="${jdbc.password}"/>
@@ -22,6 +22,17 @@
               <property name="timeBetweenEvictionRunsMillis"><value>60000</value></property>
               <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
               <property name="minEvictableIdleTimeMillis"><value>300000</value></property>
+       </bean>
+
+       <bean id="dataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+              <constructor-arg ref="dataSourceSpied" />
+              <property name="logFormatter">
+                     <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+                            <property name="loggingType" value="MULTI_LINE" />
+                            <!--<property name="margin" value="19" />-->
+                            <property name="sqlPrefix" value="SQL:::" />
+                     </bean>
+              </property>
        </bean>
 
        <!-- SqlSessionFactory -->
